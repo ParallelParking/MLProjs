@@ -1,0 +1,24 @@
+FILE TO EXPLAIN WHAT'S GOING ON WITH THE K MEANS CLUSTERING
+PROGRAM (IT'S A BIT OF A MESS)
+
+PREPROCESSING:
+
+1. READ FILE INTO DATAFRAME
+2. ENCODE DIRECTIONAL DATA:
+    a. assign each compass direction a degree value
+    b. store the sine and cosine of each degree value to demonstrate
+       circular nature of the data
+    c. drop degree and compass columns.
+3. ENCODE YES/NO COLUMNS IN BINARY
+4. ENCODE DATE DATA
+    a. split into DoY and year columns
+    b. subtract year from a set baseline year (doesn't make a difference,
+       as far as I can tell, but it looks nicer)
+5. ENCODE LOCATION DATA:
+    numeric encoding of each location
+6. HANDLE MISSING VALUES
+    a. on testing, a good threshold percent for missing data seemed
+       to be about 15%
+    b. if missing > 15%, drop the whole column
+    c. else, fill NaN with mean of the column
+7. STANDARDIZATION
